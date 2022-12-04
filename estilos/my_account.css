@@ -32,21 +32,17 @@
     margin-bottom: 4px;
 }
 
-.input {
-    background-color: var(--text-input-field);
-    border: none;
-    border-radius: 8px;
-    height: 30px;
+.value {
+    color: var(--very-light-pink);
     font-size: var(--md);
-    padding: 6px;
-    margin-bottom: 20px;
+    margin: 5px 0 32px 0;
 }
 
-.primary-button {
-    background-color: var(--hospital-green);
+.secondary-button {
+    background-color: var(--white);
     border-radius: 8px;
-    border: none;
-    color: var(--white);
+    border: 1px solid var(--hospital-green);
+    color: var(--hospital-green);
     width: 100%;
     cursor: pointer;
     font-size: var(--md);
