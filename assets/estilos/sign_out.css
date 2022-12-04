@@ -1,0 +1,109 @@
+.desktop-main {
+    width: 150px;
+    height: auto;
+    border: 1px solid var(--very-light-pink);
+    border-radius: 6px;
+}
+
+.desktop-main ul {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+}
+
+.desktop-main ul li {
+    text-align: end;
+    font-weight: bold;
+}
+
+.desktop-main ul li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.desktop-main ul li:last-child {
+    padding-top: 20px;
+    border-top: 1px solid var(--hospital-green);
+    font-weight: normal;
+}
+
+.desktop-main ul li:last-child a {
+    color: var(--hospital-green);
+    font-size: var(--sm);
+}
+
+.desktop-main ul li a {
+    color: var(--back);
+    text-decoration: none;
+    font-size: var(--md);
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,var(--card-size));
+    gap: 20px; /*Agregar espacio entres las grid*/
+    place-content: center; /*Centrar el contenido de la grid*/
+}
+
+.product-card {
+    width: var(--card-size);
+}
+
+.product-card img {
+    width: var(--card-size);
+    height: var(--card-size);
+    border-radius: 20px;
+    object-fit: cover; /*La imagen va a conservar su tamaño*/
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.product-info div p {
+    margin: 0 0 0 0;
+}
+
+.product-info div p:nth-child(1){
+   font-weight: bold;
+   font-size: var(--md);
+}
+
+.product-info div p:nth-child(2){
+    font-size: var(--sm);
+    color: var(--very-light-pink);
+ }
+
+.product-info figure {
+    margin: 0;
+}
+
+.product-info figure img {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+/*Mobile*/
+@media (max-width: 640px){
+    :root {
+        --card-size: 140px;
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,var(--card-size));
+    }
+
+    .product-card {
+        width: var(--card-size);
+    }
+    
+    .product-card img {
+        width: var(--card-size);
+        height: var(--card-size);
+        border-radius: 20px;
+        object-fit: cover; /*La imagen va a conservar su tamaño*/
+    }
+}
