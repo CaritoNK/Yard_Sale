@@ -85,7 +85,9 @@
     .logo {
         display: block;
     }
-    .form {
-        margin-bottom: 150px;
+    .secondary-button {
+        position: absolute;
+        bottom: 30px;
+        width: inherit;
     }
 }
