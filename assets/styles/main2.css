@@ -1,0 +1,46 @@
+.mobile-main {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-main ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-main ul:nth-child(2) {
+    border-top: 1px solid var(--very-light-pink);
+    padding-top: 20px;
+}
+
+.mobile-main ul:last-child {
+   position: absolute;
+   bottom: 30px;
+}
+
+.mobile-main h1 {
+    font-size: var(--md);
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.mobile-main a {
+    text-decoration: none;
+    color: var(--back);
+    font-weight: bold;
+    font-size: var(--md);
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.mobile-main ul:last-child a {
+    font-weight: normal;
+    font-size: var(--sm);
+    margin-bottom: 3px;
+}
+
+.mobile-main .sign-out {
+    color: var(--hospital-green);
+}
