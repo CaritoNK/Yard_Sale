@@ -183,7 +183,8 @@ nav {
     background-color: var(--white);
     display: grid;
     grid-template-rows: auto 1fr auto;
-    width: 300px;
+    width: 260px;
+    padding: 0 20px 0 20px;
 }
 .shopping-cart-header {
     display: flex;
