@@ -99,7 +99,7 @@ function renderProduct(){
 
         const productCardInfoFigure = document.createElement("figure");
         const productCardInfoFigureImg = document.createElement("img");
-        productCardInfoFigureImg.setAttribute("src","/assets/icons/bt_add_to_cart.svg");
+        productCardInfoFigureImg.setAttribute("src","./assets/icons/bt_add_to_cart.svg");
         productCardInfoFigureImg.setAttribute("alt","bt_add_to_cart");
 
         productCard.appendChild(productCardImg);
