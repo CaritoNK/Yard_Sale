@@ -23,9 +23,7 @@ function toggleMainDesktop(){
 }
 
 function toggleMainMobile(){
-    if(isShoppingCartClosed){
-        shoppingCart.classList.add(inactive);
-    }
+    shoppingCart.classList.add(inactive);
     mainMobile.classList.toggle(inactive);
 }
 
