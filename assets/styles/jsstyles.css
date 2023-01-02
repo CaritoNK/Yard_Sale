@@ -35,9 +35,14 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center; 
     height: 50px;
     padding: 0 30px;
     border-bottom: 1px solid var(--text-input-field);
+}
+.burguer-main {
+    max-width: 30px;
+    max-height: 30px;
 }
 .navbar-left {
     display: flex;
@@ -304,8 +309,8 @@ nav {
     /*Main Burguer*/
     .burguer-main {
         display: block;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        /*padding-top: 10px;*/
+        /*padding-bottom: 10px;*/
     }
     
     /*Shopping Cart*/
