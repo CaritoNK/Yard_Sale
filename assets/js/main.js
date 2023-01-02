@@ -70,7 +70,7 @@ function renderProduct(){
         const productCard = document.createElement("div");
         productCard.classList.add("product-card");
         productCard.setAttribute("id",prod.id);
-        productCard.addEventListener("click",() => {
+        productCard.addEventListener("click",(e) => {
             openProductDetails(productCard.id);
         });
 
