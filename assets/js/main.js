@@ -1,6 +1,6 @@
 const navbarEmail = document.querySelector(".navbar-email");
 const navbarShoppingCart = document.querySelector(".navbar-shopping-cart");
-const mainBurguer = document.querySelector(".burguer-main");
+const navbarBurguerMain = document.querySelector(".burguer-main");
 const mainDesktop = document.querySelector(".desktop-main");
 const mainMobile = document.querySelector(".mobile-main");
 const shoppingCart = document.querySelector(".shopping-cart");
@@ -11,7 +11,7 @@ const isMainMobileClosed = mainMobile.classList.contains(inactive);
 const isMainDesktopClosed = mainDesktop.classList.contains(inactive);
 const isShoppingCartClosed = shoppingCart.classList.contains(inactive);
 
-mainBurguer.addEventListener("click",toggleMainMobile);
+navbarBurguerMain.addEventListener("click",toggleMainMobile);
 navbarEmail.addEventListener("click",toggleMainDesktop);
 navbarShoppingCart.addEventListener("click",toggleShoppingCart);
 
@@ -42,6 +42,7 @@ function toggleShoppingCart(){
 function renderProduct(){
     const productList = [];
 
+    // Template o base de un objeto
     function product(name, price, img){
         this.name = name,
         this.price = price,
@@ -63,10 +64,12 @@ function renderProduct(){
         ["Totoro",120.00,"/assets/images/totoro.jpeg"]
     ];
 
+    // Recorro el array productDB y convierto cada elemento del array en un objeto, luego guardo el objeto en otro array
     for(let i=0; i<productDB.length;i++){ 
         productList.push(new product(productDB[i][0],productDB[i][1],productDB[i][2]));
     };
 
+    // Maqueto el código HTML desde JavaScript
     for(prod of productList){
         const productCard = document.createElement("div");
         productCard.classList.add("product-card");

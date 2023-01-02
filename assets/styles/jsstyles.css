@@ -41,8 +41,8 @@ nav {
     border-bottom: 1px solid var(--text-input-field);
 }
 .burguer-main {
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 25px;
+    max-height: 25px;
 }
 .navbar-left {
     display: flex;
@@ -138,10 +138,15 @@ nav {
 .mobile-main {
     position: absolute;
     top: 50px;
-    padding: 25px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    padding: 10%;
     background-color: var(--white);
-    /*display: flex;*/
-    /*flex-direction: column;*/
+
 }
 .mobile-main h1 {
     font-size: var(--md);
@@ -156,16 +161,10 @@ nav {
 .mobile-main ul:nth-child(2) {
     border-top: 1px solid var(--very-light-pink);
     padding-top: 20px;
-    padding-bottom: 70px;
-}
-.mobile-main ul:last-child {
-    position: absolute;
-    bottom: 20px;
 }
 .mobile-main ul:last-child a {
     font-weight: normal;
     font-size: var(--sm);
-    margin-bottom: 15px;
 }
 .mobile-main ul:last-child .sign-out {
     color: var(--hospital-green);
@@ -251,6 +250,7 @@ nav {
     grid-template-columns: repeat(auto-fill,var(--card-size));
     gap: 20px; /*Agregar espacio entres las grid*/
     place-content: center; /*Centrar el contenido de la grid*/
+    margin-top: 20px;
 }
 .product-card {
     width: var(--card-size);
@@ -304,13 +304,6 @@ nav {
     }
     .navbar-left ul {
         display: none;
-    }
-
-    /*Main Burguer*/
-    .burguer-main {
-        display: block;
-        /*padding-top: 10px;*/
-        /*padding-bottom: 10px;*/
     }
     
     /*Shopping Cart*/
