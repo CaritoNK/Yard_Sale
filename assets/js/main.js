@@ -8,14 +8,12 @@ const mainMobile = document.querySelector(".mobile-main");
 const shoppingCart = document.querySelector(".shopping-cart");
 const productCardContainer = document.querySelector(".product-card-container");
 const productDetails = document.querySelector(".product-details");
-const productDetailsClose = document.querySelector(".product-details-close");
 
 const inactive = "inactive";
 
 navBurguerMain.addEventListener("click",toggleMainMobile);
 navEmail.addEventListener("click",toggleMainDesktop);
 navShoppingCart.addEventListener("click",toggleShoppingCart);
-productDetailsClose.addEventListener("click",closeProductDetails);
 
 function toggleMainDesktop(){
     shoppingCart.classList.add(inactive);
@@ -34,57 +32,51 @@ function toggleShoppingCart(){
     shoppingCart.classList.toggle(inactive);
 }
 
-function closeProductDetails(){
-    productDetails.classList.add(inactive);
-}
-
-function openProductDetails(){
-    mainMobile.classList.add(inactive);
-    mainDesktop.classList.add(inactive);
-    shoppingCart.classList.add(inactive);
-    productDetails.classList.remove(inactive);
-}
-
 function renderProduct(){
     // Array de productos
     const productDB = [
-        ["Boh","120,00","./assets/images/boh.jpeg"],
-        ["Cubone","120,00","./assets/images/cubone.png"],
-        ["Dragonite","120,00","./assets/images/dragonite.jpg"],
-        ["Nezuko","120,00","./assets/images/nezuko.png"],
-        ["Pikachu","120,00","./assets/images/pikachu.png"],
-        ["Totoro","120,00","./assets/images/totoro.jpeg"],
-        ["Boh","120,00","./assets/images/boh.jpeg"],
-        ["Cubone","120,00","./assets/images/cubone.png"],
-        ["Dragonite","120,00","./assets/images/dragonite.jpg"],
-        ["Nezuko","120,00","./assets/images/nezuko.png"],
-        ["Pikachu","120,00","./assets/images/pikachu.png"],
-        ["Totoro","120,00","./assets/images/totoro.jpeg"]
+        ["203401","Boh","120,00","./assets/images/boh.jpeg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203402","Cubone","120,00","./assets/images/cubone.png","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203403","Dragonite","120,00","./assets/images/dragonite.jpg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203404","Nezuko","120,00","./assets/images/nezuko.png","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203405","Pikachu","120,00","./assets/images/pikachu.png","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203406","Totoro","120,00","./assets/images/totoro.jpeg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203407","Boh","120,00","./assets/images/boh.jpeg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203408","Cubone","120,00","./assets/images/cubone.png","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203409","Dragonite","120,00","./assets/images/dragonite.jpg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203410","Nezuko","120,00","./assets/images/nezuko.png","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203411","Pikachu","120,00","./assets/images/pikachu.png","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203412","Totoro","120,00","./assets/images/totoro.jpeg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"]
     ];
 
     // Template o base de un objeto
-    function product(name, price, img){
+    function product(id, name, price, img, descript){
+       this.id = id, 
         this.name = name,
         this.price = price,
-        this.img = img
+        this.img = img,
+        this.descript = descript
     }
 
     const productList = [];
 
     // Recorro el array productDB y convierto cada elemento del array en un objeto, luego guardo el objeto en otro array
     for(let i=0; i<productDB.length;i++){ 
-        productList.push(new product(productDB[i][0],productDB[i][1],productDB[i][2]));
+        productList.push(new product(productDB[i][0],productDB[i][1],productDB[i][2],productDB[i][3],productDB[i][4]));
     }
 
-    // Maqueto el código HTML desde JavaScript
+    // Maquetación del código HTML del Product Card
     for(prod of productList){
         const productCard = document.createElement("div");
         productCard.classList.add("product-card");
+        productCard.setAttribute("id",prod.id);
+        productCard.addEventListener("click",() => {
+            openProductDetails(productCard.id);
+        });
 
         const productCardImg = document.createElement("img");
         productCardImg.setAttribute("src",prod.img);
         productCardImg.setAttribute("alt",prod.name);
-        productCardImg.addEventListener("click",openProductDetails);
 
         const productCardInfo = document.createElement("div");
         productCardInfo.classList.add("product-card-info");
@@ -108,6 +100,74 @@ function renderProduct(){
         productCardInfo.appendChild(productCardInfoFigure);
         productCardInfoFigure.appendChild(productCardInfoFigureImg);
         productCardContainer.appendChild(productCard);
+    }
+
+    // Detalle del producto
+    // Cerrar el detalle del producto
+    function closeProductDetails(){
+        productDetails.classList.add(inactive);
+    }
+    // Abrir el detalle del producto
+    function openProductDetails(id_product_card){
+        mainMobile.classList.add(inactive);
+        mainDesktop.classList.add(inactive);
+        shoppingCart.classList.add(inactive);
+        productDetails.classList.remove(inactive);
+
+        productDetails.innerHTML = " ";
+
+        for(prod of productList){
+            if(id_product_card == prod.id){
+                createProductDetails(prod.img, prod.price, prod.name, prod.descript);
+            }
+        }
+    }
+    // Maquetación del código HTML de la descripción detallada del producto
+    function createProductDetails(pd_img, pd_price, pd_name, pd_descript){
+        const productDetailsClose = document.createElement("img");
+        productDetailsClose.setAttribute("src","./assets/icons/icon_close.png");
+        productDetailsClose.setAttribute("alt","close");
+        productDetailsClose.setAttribute("class","product-details-close");
+        productDetailsClose.addEventListener("click",closeProductDetails);
+
+        const productDetailsImg = document.createElement("img");
+        productDetailsImg.setAttribute("src",pd_img);
+        productDetailsImg.setAttribute("alt",pd_name);
+
+        const productDetailsPoints = document.createElement("div");
+        productDetailsPoints.setAttribute("class","points");
+        const productDetailsPointsLi_1 = document.createElement("li");
+        productDetailsPointsLi_1.setAttribute("class","active");
+        const productDetailsPointsLi_2 = document.createElement("li");
+        const productDetailsPointsLi_3 = document.createElement("li");
+
+        const productDetailsInfo = document.createElement("div");
+        productDetailsInfo.setAttribute("class","product-details-info");
+        const productDetailsInfoPrice = document.createElement("p");
+        productDetailsInfoPrice.innerText = "$" + pd_price;
+        const productDetailsInfoName = document.createElement("p");
+        productDetailsInfoName.innerText = pd_name;
+        const productDetailsInfoDescrip = document.createElement("p");
+        productDetailsInfoDescrip.innerText = pd_descript;
+        const productDetailsInfoButton = document.createElement("button");
+        productDetailsInfoButton.setAttribute("class","primary-button add-to-cart-button");
+        productDetailsInfoButton.innerText = "Add to cart";
+        const productDetailsInfoButtonImg = document.createElement("img");
+        productDetailsInfoButtonImg.setAttribute("src","./assets/icons/bt_add_to_cart.svg");
+        productDetailsInfoButtonImg.setAttribute("alt","add to cart");
+
+        productDetails.appendChild(productDetailsClose);
+        productDetails.appendChild(productDetailsImg);
+        productDetails.appendChild(productDetailsPoints);
+        productDetailsPoints.appendChild(productDetailsPointsLi_1);
+        productDetailsPoints.appendChild(productDetailsPointsLi_2);
+        productDetailsPoints.appendChild(productDetailsPointsLi_3);
+        productDetails.appendChild(productDetailsInfo);
+        productDetailsInfo.appendChild(productDetailsInfoPrice);
+        productDetailsInfo.appendChild(productDetailsInfoName);
+        productDetailsInfo.appendChild(productDetailsInfoDescrip);
+        productDetailsInfo.appendChild(productDetailsInfoButton);
+        productDetailsInfoButton.appendChild(productDetailsInfoButtonImg);
     }
 }
 renderProduct();
