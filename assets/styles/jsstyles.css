@@ -33,12 +33,17 @@ body {
 
 /*Navbar*/
 nav {
+    position: fixed;
+    background: var(--white);
+    width: 94%;
+    top: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center; 
     height: 50px;
-    padding: 0 30px;
+    padding: 0 3%;
     border-bottom: 1px solid var(--text-input-field);
+    z-index: 100;
 }
 nav .burguer-main {
     max-width: 25px;
@@ -136,17 +141,16 @@ nav .burguer-main {
 
 /*Main Mobile*/
 .mobile-main {
-    position: absolute;
+    position: fixed;
     top: 50px;
     left: 0;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     width: 80%;
-    height: 80%;
+    height: 85%;
     padding: 10%;
-    background-color: var(--white);
-
+    background: var(--white);
 }
 .mobile-main h1 {
     font-size: var(--md);
@@ -247,11 +251,13 @@ nav .burguer-main {
 
  /*Product Details*/
 .product-details {
-    position: absolute;
+    position: fixed;
     right: 0;
+    top: 50px;
+    height: 90%;
     background: var(--white);
     width: 360px;
-    padding-bottom: 20px;
+    padding-bottom: 10%;
 }
 .product-details > img:nth-child(1) {
     position: absolute;
@@ -264,14 +270,14 @@ nav .burguer-main {
 }
 .product-details > img:nth-child(2) {
     width: 100%;
-    height: 360px;
+    height: 50%;
     object-fit: cover;
     border-radius: 0 0 20px 20px;
 }
 .product-details .points {
     display: flex;
     justify-content: center;
-  }
+}
 .product-details .points > li {
     background: var(--very-light-pink);
     width: 8px;
@@ -323,7 +329,7 @@ nav .burguer-main {
     grid-template-columns: repeat(auto-fill,var(--card-size));
     gap: 20px; /*Agregar espacio entres las grid*/
     place-content: center; /*Centrar el contenido de la grid*/
-    margin-top: 20px;
+    margin-top: 60px;
 }
 .product-card {
     width: var(--card-size);
@@ -378,6 +384,12 @@ nav .burguer-main {
     }
     .navbar-left ul {
         display: none;
+    }
+
+    /*Navbar*/
+    nav {
+        width: 80%;
+        padding: 0 10%;
     }
     
     /*Shopping Cart*/

@@ -46,7 +46,13 @@ function renderProduct(){
         ["203409","Dragonite","120,00","./assets/images/dragonite.jpg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
         ["203410","Nezuko","120,00","./assets/images/nezuko.png","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
         ["203411","Pikachu","120,00","./assets/images/pikachu.png","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
-        ["203412","Totoro","120,00","./assets/images/totoro.jpeg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"]
+        ["203412","Totoro","120,00","./assets/images/totoro.jpeg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203413","Boh","120,00","./assets/images/boh.jpeg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203414","Cubone","120,00","./assets/images/cubone.png","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203415","Dragonite","120,00","./assets/images/dragonite.jpg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203416","Nezuko","120,00","./assets/images/nezuko.png","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203417","Pikachu","120,00","./assets/images/pikachu.png","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"],
+        ["203418","Totoro","120,00","./assets/images/totoro.jpeg","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"]
     ];
 
     // Template o base de un objeto
