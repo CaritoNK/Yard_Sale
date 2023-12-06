@@ -1,2 +1,4 @@
 # Yard_Sale
-Venta de garaje
+
+###### Copyright (c) 2023 Carolina Chavarriaga
+###### Todos los derechos reservados.
